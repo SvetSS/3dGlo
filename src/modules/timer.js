@@ -29,17 +29,14 @@ const timer = deadLine => {
         } else { return num; }
     };
 
-    //counTimer('22 june 2023');
     const updateClock = () => {
         const getTime = getTimeRemaining();
         timerHours.textContent = getZero(getTime.hours);
         timerMinutes.textContent = getZero(getTime.minutes);
         timerSeconds.textContent = getZero(getTime.seconds);
-        //console.log(getTime);
+
         const timeInterval = setInterval(updateClock, 1000);
-        /* if (getTime.timeRemaining > 0) {
-            setTimeout(updateClock, 1000);
-        } */
+
         if (getTime.timeRemaining <= 0) {
             clearInterval(timeInterval);
         }
@@ -48,4 +45,3 @@ const timer = deadLine => {
     updateClock();
 };
 export default timer;
-//export default fFunc;

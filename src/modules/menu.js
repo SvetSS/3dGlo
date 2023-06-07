@@ -11,6 +11,6 @@ const menu = () => {
     menuBtn.addEventListener('click', handleMenu);
     closeBtn.addEventListener('click', handleMenu);
     menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu));
-    console.log('z');
+    //console.log('z');
 };
 export default menu;
