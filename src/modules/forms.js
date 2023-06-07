@@ -1,6 +1,7 @@
 const forms = () => {
     const form1 = document.getElementById('form1'),
         form2 = document.getElementById('form2'),
+        form3 = document.getElementById('form3'),
         form1Name = document.getElementById('form1-name'),
         form1Email = document.getElementById('form1-email'),
         form1Phone = document.getElementById('form1-phone'),
@@ -11,7 +12,6 @@ const forms = () => {
         form2Phone = document.getElementById('form2-phone'),
 
         form3Name = document.getElementById('form3-name'),
-        form3Message = document.getElementById('form3-message'),
         form3Email = document.getElementById('form3-email'),
         form3Phone = document.getElementById('form3-phone');
     let isError = false;
