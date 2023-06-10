@@ -5,6 +5,7 @@ const currentDayOfWeek = daysOfWeek[currentDate.getDay()];
 
 
 let currentHours = currentDate.getHours();
+console.dir(currentHours);
 const period = currentHours >= 12 ? "PM" : "AM";
 currentHours = currentHours % 12 || 12;
 const currentMinutes = getZero(currentDate.getMinutes());

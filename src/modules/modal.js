@@ -1,7 +1,6 @@
 const modal = () => {
     const modal = document.querySelector('.popup');
     const buttons = document.querySelectorAll('.popup-btn');
-    const closeBtn = document.querySelector('.popup-close');
 
     const fadeInModal = () => {
         let opacity = 0;
@@ -13,9 +12,11 @@ const modal = () => {
 
             if (opacity >= 1) {
                 clearInterval(fadeInInterval);
-
             }
         }, 15);
+        modal.addEventListener('click', e => {
+            console.log('f');
+        });
     };
 
     const fadeOutModal = () => {
@@ -23,7 +24,6 @@ const modal = () => {
         const fadeOutInterval = setInterval(() => {
             opacity -= 0.05;
             modal.style.opacity = opacity;
-            console.log(opacity);
 
             if (opacity <= 0) {
                 clearInterval(fadeOutInterval);
@@ -43,16 +43,16 @@ const modal = () => {
         });
     });
 
-    closeBtn.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-            modal.style.display = 'none';
+    modal.addEventListener('click', e => {
+        if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
+            if (window.innerWidth < 768) {
+                modal.style.display = 'none';
 
-        } else {
-            fadeOutModal();
+            } else {
+                fadeOutModal();
+            }
         }
-
     });
 
-    //console.log('m');
 };
 export default modal;

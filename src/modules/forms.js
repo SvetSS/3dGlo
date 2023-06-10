@@ -153,7 +153,7 @@ const forms = () => {
         }
     });
 
-    console.log('forms');
+    console.log("forms");
 };
 
 export default forms;
