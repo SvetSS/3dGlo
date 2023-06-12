@@ -1,32 +1,11 @@
 const slider = () => {
 
-    const sliderBlock = document.querySelector('.portfolio-content'),
-        slides = document.querySelectorAll('.portfolio-item'),
-        dotsList = document.querySelector('.portfolio-dots'),
-        dots = () => {
-            for (let i = 0; i < slides.length - 1; i++) {
-                let dot = document.createElement("li");
-                dot.classList.add('dot');
-                dotsList.append(dot);
+    const sliderBlock = document.querySelector('.portfolio-content');
+    const slides = document.querySelectorAll('.portfolio-item');
+    const dotsList = document.querySelector('.portfolio-dots');
 
-            }
-        };
-
-
-
-    let currentSlide = 0,
-        // = document.querySelectorAll('.dot'),
-        interval;
-
-    dots[0].classList.add('dot-active');
-    console.log(dots[0]);
-    // console.log(dots);
-
-    //dot;
-    //*********
-
-    ///////////
-
+    let currentSlide = 0;
+    let interval;
 
 
     const nextSlide = (elems, index, strClass) => {
@@ -35,7 +14,18 @@ const slider = () => {
     const prevSlide = (elems, index, strClass) => {
         elems[index].classList.remove(strClass);
     };
+    slides.forEach((item, idx) => {
+        let dot = document.createElement("li");
 
+        dot.classList.add('dot');
+        if (idx === 0) {
+            dot.classList.add('dot-active');
+        }
+
+        dotsList.append(dot);
+    });
+
+    let dots = dotsList.querySelectorAll('.dot');
     const autoSlide = () => {
         prevSlide(slides, currentSlide, 'portfolio-item-active');
         prevSlide(dots, currentSlide, 'dot-active');
@@ -97,8 +87,6 @@ const slider = () => {
         }
     });
     startSlide(2000);
-
-    dotsl();
 
     console.log("slider");
 };
