@@ -4,6 +4,7 @@ import modal from './modules/modal';
 import calc from './modules/calc';
 import forms from './modules/forms';
 import tabs from './modules/tabs';
+import slider from './modules/slider';
 
 
 timer('22 june 2023');
@@ -12,4 +13,5 @@ modal();
 calc();
 forms();
 tabs();
+slider();
 

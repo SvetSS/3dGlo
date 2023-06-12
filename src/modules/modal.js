@@ -14,9 +14,9 @@ const modal = () => {
                 clearInterval(fadeInInterval);
             }
         }, 15);
-        modal.addEventListener('click', e => {
+        /* modal.addEventListener('click', e => {
             console.log('f');
-        });
+        }); */
     };
 
     const fadeOutModal = () => {
