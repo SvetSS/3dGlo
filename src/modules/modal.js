@@ -1,3 +1,5 @@
+import { animate } from "./helpers";
+
 const modal = () => {
     const modal = document.querySelector('.popup');
     const buttons = document.querySelectorAll('.popup-btn');
@@ -14,9 +16,6 @@ const modal = () => {
                 clearInterval(fadeInInterval);
             }
         }, 15);
-        /* modal.addEventListener('click', e => {
-            console.log('f');
-        }); */
     };
 
     const fadeOutModal = () => {
@@ -38,21 +37,27 @@ const modal = () => {
                 modal.style.display = 'block';
 
             } else {
-                fadeInModal();
+                animate({
+                    duration: 1000,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        modal.style.display = 'block';
+                        modal.style.opacity = progress;
+                    }
+                });
+
             }
         });
     });
 
     modal.addEventListener('click', e => {
         if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
-            if (window.innerWidth < 768) {
-                modal.style.display = 'none';
-
-            } else {
-                fadeOutModal();
-            }
+            modal.style.display = 'none';
         }
-    });
+    }
+    );
 
 };
 export default modal;
