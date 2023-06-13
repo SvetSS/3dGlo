@@ -54,7 +54,23 @@ const modal = () => {
 
     modal.addEventListener('click', e => {
         if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
-            modal.style.display = 'none';
+
+            if (window.innerWidth < 768) {
+                modal.style.display = 'none';
+
+            } else {
+                animate({
+                    duration: 1000,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        modal.style.opacity = 1 - progress;
+                        console.log(modal.style.opacity);
+                    }
+                });
+
+            }
         }
     }
     );
