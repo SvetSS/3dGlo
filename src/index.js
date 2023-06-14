@@ -5,6 +5,7 @@ import calc from './modules/calc';
 import forms from './modules/forms';
 import tabs from './modules/tabs';
 import slider from './modules/slider';
+import db from './modules/db';
 
 
 timer('22 june 2023');
@@ -14,4 +15,5 @@ calc(100);
 forms();
 tabs();
 slider();
+db();
 
