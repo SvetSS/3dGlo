@@ -91,5 +91,5 @@ const slider = () => {
     console.log("slider");
 };
 
-export default slider;
+//export default slider;
 
