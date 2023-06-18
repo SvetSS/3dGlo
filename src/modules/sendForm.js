@@ -12,12 +12,13 @@ const sendForm = ({ idForm, someElem = [] }) => {
     console.log(form1);
 
     const validate = list => {
-        /* let success = true;
+        let success = true;
         list.forEach(input => {
-            if (!input.classList.cotains('success')) {
+            if (!input.classList.contains('success')) {
                 success = false;
             }
-        }); */
+        });
+        return success;
     };
     const sendData = data => {
         return fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -29,7 +30,7 @@ const sendForm = ({ idForm, someElem = [] }) => {
         }).then(response => response.json())
     };
     const submitForm = form => {
-        const formElements = form.querySelectorAll('input');
+        let formElements = form.querySelectorAll('input');
         const formData = new FormData(form);
         const formBody = {};
 
@@ -67,12 +68,12 @@ const sendForm = ({ idForm, someElem = [] }) => {
         }
         form1.addEventListener('submit', e => {
             e.preventDefault();
-            submitForm(form1);
-            /*  if (validate(formElements)) {
-     
-             } else {
-                 alert('Ошибка ввода');
-             } */
+            const formElements = form1.querySelectorAll('input');
+            if (validate(formElements)) {
+                submitForm(form1);
+            } else {
+                alert('Ошибка ввода');
+            }
         });
     } catch (error) {
         console.log(error.message);
@@ -83,12 +84,12 @@ const sendForm = ({ idForm, someElem = [] }) => {
         }
         form2.addEventListener('submit', e => {
             e.preventDefault();
-            submitForm(form2);
-            /*  if (validate(formElements)) {
-     
-             } else {
-                 alert('Ошибка ввода');
-             } */
+            const formElements = form2.querySelectorAll('input');
+            if (validate(formElements)) {
+                submitForm(form2);
+            } else {
+                alert('Ошибка ввода');
+            }
         });
     } catch (error) {
         console.log(error.message);
@@ -99,12 +100,12 @@ const sendForm = ({ idForm, someElem = [] }) => {
         }
         form3.addEventListener('submit', e => {
             e.preventDefault();
-            submitForm(form3);
-            /*  if (validate(formElements)) {
-     
-             } else {
-                 alert('Ошибка ввода');
-             } */
+            const formElements = form3.querySelectorAll('input');
+            if (validate(formElements)) {
+                submitForm(form3);
+            } else {
+                alert('Ошибка ввода');
+            }
         });
     } catch (error) {
         console.log(error.message);

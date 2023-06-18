@@ -1,21 +1,20 @@
 const menu = () => {
-    const menuBtn = document.querySelector('.menu'),
-        menu = document.querySelector('menu'),
-        closeBtn = document.querySelector('.close-btn');
-    //menuItems = document.querySelectorAll('ul>li>a');
+    const menuBtn = document.querySelector('.menu');
+    const menu = document.querySelector('menu');
+    //const menuItems = menu.querySelectorAll('ul>li>a');
+    const closeBtn = menu.querySelector('.close-btn');
 
-    const handleMenu = event => {
-        event.preventDefault();
+    // console.log(menuBtn);
 
-        if (event.target === menuBtn || event.target === closeBtn || event.target.parentNode.parentNode === menu) {
+    const handleMenu = () => {
+        menu.classList.toggle('active-menu');
+    };
+    menu.addEventListener('click', e => {
+        if (e.target === closeBtn || e.target.matches('menu>ul>li>a')) {
             menu.classList.toggle('active-menu');
         }
-    };
-
-    document.addEventListener('click', handleMenu);
+    });
+    menuBtn.addEventListener('click', handleMenu);
 };
-
-
-//console.log('z');
 
 export default menu;

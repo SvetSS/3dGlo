@@ -15,7 +15,7 @@ const slider = () => {
         elems[index].classList.remove(strClass);
     };
     slides.forEach((item, idx) => {
-        let dot = document.createElement("li");
+        const dot = document.createElement("li");
 
         dot.classList.add('dot');
         if (idx === 0) {
@@ -25,7 +25,7 @@ const slider = () => {
         dotsList.append(dot);
     });
 
-    let dots = dotsList.querySelectorAll('.dot');
+    const dots = dotsList.querySelectorAll('.dot');
     const autoSlide = () => {
         prevSlide(slides, currentSlide, 'portfolio-item-active');
         prevSlide(dots, currentSlide, 'dot-active');
@@ -91,5 +91,5 @@ const slider = () => {
     console.log("slider");
 };
 
-//export default slider;
+export default slider;
 

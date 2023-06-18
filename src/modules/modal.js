@@ -10,8 +10,6 @@ const modal = () => {
             opacity += 0.05;
             modal.style.opacity = opacity;
             modal.style.display = 'block';
-            console.log(opacity);
-
             if (opacity >= 1) {
                 clearInterval(fadeInInterval);
             }
@@ -66,7 +64,6 @@ const modal = () => {
                     },
                     draw(progress) {
                         modal.style.opacity = 1 - progress;
-                        console.log(modal.style.opacity);
                         modal.style.display = 'none';
                     }
                 });

@@ -15,7 +15,8 @@ const forms = () => {
         form3Email = document.getElementById('form3-email'),
         form3Phone = document.getElementById('form3-phone');
     let isError = false;
-    //если создаю такие функции, а потом их применяю в формах, то  isError = true; не могу понять, почему. Всю ночь потратила на это
+    //если создаю такие функции, а потом их применяю в формах, то  isError = true; 
+    //не могу понять, почему. Всю ночь потратила на это
     /*  const validatePhoneDigits = input => {
          if (/^[\d()+-]+$/g.test(input.value) && input.value !== '') {
              console.log(isError);
@@ -52,29 +53,30 @@ const forms = () => {
         isError = false;
         //validateTextCyrillic(form1Name.value);
         if (/^[А-Яа-яЁё\s-]+$/gi.test(form1Name.value) && form1Name.value !== '') {
+            form1Name.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('вводите только кириллицу');
+            alert('в поле для имени вводите только кириллицу');
             console.log(isError);
             console.log('тпру');
         }
         // validateEmailLatin(form1Email.value);
-        if (/^[a-zA-Z0-9-_.!~*']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi.test(form1Email.value) && form1Name.value !== '') {
-
+        if (/^[a-zA-Z0-9-_.!~*']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi.test(form1Email.value) && form1Email.value !== '') {
+            form1Email.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('проверьте правильность ввода');
+            alert('проверьте правильность ввода электронной почты. Должны присутствовать @');
             console.log(isError);
         }
         //validatePhoneDigits(form1Phone.value);
         if (/^[\d()+-]+$/g.test(form1Phone.value) && form1Phone.value !== '') {
-
-            console.log(isError);
+            form1Phone.classList.add('success');
+            console.log(form1Phone.classList);
         } else {
             isError = true;
-            alert('вводите только цифры, дефис и круглые скобки');
+            alert('в поле номер телефона вводите только цифры, дефис и круглые скобки');
             console.log(isError);
         }
 
@@ -86,25 +88,28 @@ const forms = () => {
         e.preventDefault();
         isError = false;
         if (/^[А-Яа-яЁё\s-]+$/gi.test(form3Name.value) && form3Name.value !== '') {
+            form3Name.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('вводите только кириллицу');
+            alert('в поле для имени вводите только кириллицу');
             console.log(isError);
             console.log('тпру');
         }
-        if (/^[a-zA-Z0-9-_.!~*']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi.test(form3Email.value) && form3Name.value !== '') {
-            console.log(isError);
+        if (/^[a-zA-Z0-9-_.!~*']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi.test(form3Email.value) && form3Email.value !== '') {
+            form3Email.classList.add('success');
+            console.log(form1Name.classList);
         } else {
             isError = true;
-            alert('проверьте правильность ввода');
+            alert('проверьте правильность ввода электронной почты. Должны присутствовать @');
             console.log(isError);
         }
         if (/^[\d()+-]+$/g.test(form3Phone.value) && form3Phone.value !== '') {
+            form3Phone.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('вводите только цифры, дефис и круглые скобки');
+            alert('в поле номер телефона вводите только цифры, дефис и круглые скобки');
             console.log(isError);
         }
 
@@ -116,35 +121,36 @@ const forms = () => {
         e.preventDefault();
         isError = false;
         if (/^[А-Яа-яЁё\s-]+$/gi.test(form2Message.value) && form2Message.value !== '') {
-            console.log(isError);
+            form2Message.classList.add('success');
+            console.log(isError, form2Message.classList);
         } else {
             isError = true;
-            alert('вводите только кириллицу');
+            alert('сообщение вводите только кириллицей');
             console.log(isError);
             console.log('тпру');
         }
         if (/^[А-Яа-яЁё\s-]+$/gi.test(form2Name.value) && form2Name.value !== '') {
+            form2Name.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('вводите только кириллицу');
+            alert('в поле для имени вводите только кириллицу ');
             console.log(isError);
-            console.log('тпру');
         }
-        if (/^[a-zA-Z0-9-_.!~*']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi.test(form2Email.value) && form2Name.value !== '') {
-
+        if (/^[a-zA-Z0-9-_.!~*']+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi.test(form2Email.value) && form2Email.value !== '') {
+            form2Email.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('проверьте правильность ввода');
+            alert('проверьте правильность ввода электронной почты. Должны присутствовать @');
             console.log(isError);
         }
         if (/^[\d()+-]+$/g.test(form2Phone.value) && form2Phone.value !== '') {
-
+            form2Phone.classList.add('success');
             console.log(isError);
         } else {
             isError = true;
-            alert('вводите только цифры, дефис и круглые скобки');
+            alert('в поле номер телефона вводите только цифры, дефис и круглые скобки');
             console.log(isError);
         }
 
